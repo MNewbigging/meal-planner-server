@@ -1,5 +1,4 @@
-import { Router, send } from "https://deno.land/x/oak/mod.ts";
-import { getLogin } from "./loginController.ts";
+import { Router } from "./imports.ts";
 
 const router = new Router();
 router.post("/", (ctx) => {
