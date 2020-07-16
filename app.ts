@@ -1,11 +1,11 @@
-import { Application } from "./imports.ts";
-import { oakCors } from "./imports.ts";
+import { Application, oakCors, PORT } from "./imports.ts";
 
 import router from "./routes.ts";
 
 const app = new Application();
 app.use(oakCors()); // Enables CORS for all routes
 app.use(router.routes());
+app.use(router.allowedMethods());
 
-console.log("listening on port 3030");
-await app.listen({ port: 3030 });
+console.log(`listening on port ${PORT}`);
+await app.listen({ port: PORT });
